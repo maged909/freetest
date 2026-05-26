@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "icon-preview",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "resources", "-p", "5199", "--no-clipboard"],
+      "port": 5199
+    }
+  ]
+}
