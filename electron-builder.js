@@ -1,6 +1,6 @@
 module.exports = {
-  appId: 'io.freeter.app',
-  productName: 'Freeter',
+  appId: 'io.freetest.app',
+  productName: 'Freetest',
   artifactName: '${productName}-${version}-${os}-${arch}.${ext}',
   files: [{
     from: './build',
