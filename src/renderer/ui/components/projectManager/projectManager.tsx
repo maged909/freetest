@@ -36,12 +36,14 @@ export function createProjectManagerComponent({
       onListItemDragStart,
       onListItemDrop,
       onAddProjectClick,
+      onImportProjectClick,
       currentProjectId,
       deleteProjectIds,
       projectList,
       projectAddedTrigger,
       deleteProjectAction,
       duplicateProjectAction,
+      exportProjectAction,
     } = useProjectManagerViewModel();
 
     if (renderProjectManager) {
@@ -51,6 +53,7 @@ export function createProjectManagerComponent({
             currentProjectId={currentProjectId}
             draggingOverProjectId={draggingOverProjectId}
             onAddProjectClick={onAddProjectClick}
+            onImportProjectClick={onImportProjectClick}
             onListItemClick={onListItemClick}
             onListItemDragEnd={onListItemDragEnd}
             onListItemDragEnter={onListItemDragEnter}
@@ -62,6 +65,7 @@ export function createProjectManagerComponent({
             deleteProjectAction={deleteProjectAction}
             deleteProjectIds={deleteProjectIds}
             duplicateProjectAction={duplicateProjectAction}
+            exportProjectAction={exportProjectAction}
           ></ProjectManagerList>
         </div>
         <div className={clsx(settingsScreenStyles['settings-screen-panel'], styles['settings-editor'])}>

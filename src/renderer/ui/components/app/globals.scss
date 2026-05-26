@@ -11,8 +11,9 @@ body {
 }
 
 body, select, a, input, textarea, button {
-  font-family: Roboto;
-  font-size: 14px;
+  font-family: system-ui, -apple-system, 'Segoe UI Variable', 'Segoe UI', sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -30,9 +31,10 @@ fieldset {
   margin: 0;
   padding: 0;
 }
+
 select, input, textarea {
-  border-radius: 2px;
-  padding: 6px;
+  border-radius: 5px;
+  padding: 6px 8px;
 }
 
 input {
@@ -74,12 +76,13 @@ input[type="checkbox"] {
   margin: 0;
   font: inherit;
   color: var(--freeter-inputColor);
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   border: 1px solid var(--freeter-inputBorder);
-  border-radius: 1px;
+  border-radius: 3px;
   transform: translateY(-0.075em);
   margin-right: 6px;
+  transition: background-color 100ms ease, border-color 100ms ease;
 }
 
 input[type="checkbox"]::before {
@@ -87,17 +90,22 @@ input[type="checkbox"]::before {
   position: absolute;
   top: 50%;
   left: 50%;
-
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
   clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
   transform: scale(0) translate(-50%, -50%);
   transform-origin: bottom left;
   box-shadow: inset 12px 12px var(--freeter-inputColor);
 }
 
+input[type="checkbox"]:checked {
+  background-color: var(--freeter-primary);
+  border-color: var(--freeter-primary);
+}
+
 input[type="checkbox"]:checked::before {
   transform: scale(1) translate(-50%, -50%);
+  box-shadow: inset 12px 12px #fff;
 }
 
 input[type="checkbox"]:focus {
@@ -115,8 +123,8 @@ input[type="checkbox"]:disabled {
 }
 
 ::-webkit-scrollbar {
-  width: 3px;
-  height: 3px;
+  width: 4px;
+  height: 4px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
@@ -126,6 +134,7 @@ input[type="checkbox"]:disabled {
 }
 ::-webkit-scrollbar-thumb {
   background-color: var(--freeter-scrollbarThumb);
+  border-radius: 4px;
   &:hover {
     background-color: var(--freeter-scrollbarThumbHover);
   }
@@ -139,4 +148,3 @@ ul {
   padding: 0;
   margin: 0;
 }
-

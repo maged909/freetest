@@ -6,7 +6,7 @@
 import { ActionBarItems } from '@/base/actionBar';
 import { EntityId } from '@/base/entity';
 import { Project } from '@/base/project';
-import { delete14Svg, duplicate14Svg } from '@/ui/assets/images/appIcons';
+import { delete14Svg, duplicate14Svg, export14Svg } from '@/ui/assets/images/appIcons';
 import { DragEvent, MouseEvent, useCallback, useMemo } from 'react';
 
 export type ProjectManagerListItemOnMouseEvent = (evt: MouseEvent<HTMLElement>, projectId: EntityId) => void;
@@ -26,6 +26,7 @@ export interface ProjectManagerListItemProps {
   onDragOver: ProjectManagerListItemOnDragEvent;
   onDrop: ProjectManagerListItemOnDragEvent;
   duplicateProjectAction: ProjectManagerListItemProjectAction;
+  exportProjectAction: ProjectManagerListItemProjectAction;
   deleteProjectAction: ProjectManagerListItemProjectAction;
 }
 
@@ -37,6 +38,7 @@ export function useProjectManagerListItemViewModel(props: ProjectManagerListItem
     project,
     deleteProjectAction,
     duplicateProjectAction,
+    exportProjectAction,
     isDropArea,
     onDragEnd,
     onDragEnter,
@@ -90,6 +92,14 @@ export function useProjectManagerListItemViewModel(props: ProjectManagerListItem
     }
   }, {
     enabled: true,
+    icon: export14Svg,
+    id: 'EXPORT-PROJECT',
+    title: 'Export Project',
+    doAction: async () => {
+      exportProjectAction(id);
+    }
+  }, {
+    enabled: true,
     pressed: hasDeletionMark,
     icon: delete14Svg,
     id: 'DELETE-PROJECT',
@@ -97,7 +107,7 @@ export function useProjectManagerListItemViewModel(props: ProjectManagerListItem
     doAction: async () => {
       deleteProjectAction(id);
     }
-  }], [hasDeletionMark, duplicateProjectAction, id, deleteProjectAction])
+  }], [hasDeletionMark, duplicateProjectAction, exportProjectAction, id, deleteProjectAction])
 
   return {
     name,

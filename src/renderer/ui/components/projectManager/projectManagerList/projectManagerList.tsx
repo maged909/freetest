@@ -21,9 +21,11 @@ export function ProjectManagerList(props: ProjectManagerListProps) {
     onListItemDragStart,
     onListItemDrop,
     onAddProjectClick,
+    onImportProjectClick,
     deleteProjectAction,
     deleteProjectIds,
     duplicateProjectAction,
+    exportProjectAction,
   } = useProjectManagerListViewModel(props);
 
   return (<div role="tablist">
@@ -43,6 +45,7 @@ export function ProjectManagerList(props: ProjectManagerListProps) {
         key={item.id}
         deleteProjectAction={deleteProjectAction}
         duplicateProjectAction={duplicateProjectAction}
+        exportProjectAction={exportProjectAction}
       ></ProjectManagerListItem>
     ))}
     <div className={styles['project-list-actions']}>
@@ -51,6 +54,11 @@ export function ProjectManagerList(props: ProjectManagerListProps) {
         onClick={e=>onAddProjectClick(e)}
         size='L'
         primary={true}
+      ></Button>
+      <Button
+        caption='Import Project'
+        onClick={onImportProjectClick}
+        size='L'
       ></Button>
     </div>
   </div>)

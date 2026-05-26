@@ -16,7 +16,7 @@
   visibility: hidden;
 
   &.is-drop-area * {
-    pointer-events: none; // fixes issues caused by dragleave called when dragging over layout items
+    pointer-events: none;
   }
 
   &.is-visible {
@@ -29,21 +29,7 @@
 
   &::-webkit-scrollbar{
     display: none;
-    // width: 6px;
-    // height: 6px;
   }
-  // &:not(:hover) {
-  //   &::-webkit-scrollbar{
-  //     display: none;
-  //   }
-  // }
-  // &::-webkit-scrollbar-thumb{
-  //   opacity: 0;
-  //   transition: opacity 200ms ease;
-  // }
-  // &:hover::-webkit-scrollbar-thumb{
-  //   opacity: 0;
-  // }
 }
 
 .no-widgets {
@@ -59,29 +45,26 @@
   height: 24px;
 }
 
-
 .layout-item {
   position: absolute;
   transition: all 100ms ease;
-  // transition-property: transform;
   border: 1px solid var(--freeter-widgetLayoutItemBorder);
   box-sizing: border-box;
   z-index: 0;
+  border-radius: 9px;
+  box-shadow: 0 2px 6px var(--freeter-widgetLayoutItemShadow);
 
-  /* Absolute positioned elements ignore the padding of the parent. */
-  /* This fix adds padding at the bottom of the widget layout using a transparent padding-size element. */
   &:after {
     content: "";
     display: block;
     position: absolute;
-    bottom: -6px;
-    right: -6px;
-    width: 6px;
-    height: 6px;
+    bottom: -8px;
+    right: -8px;
+    width: 8px;
+    height: 8px;
   }
 
   &[draggable=true]:hover {
-    // border-style: dotted;
     border-color: var(--freeter-widgetLayoutItemEditHoverBorder);
   }
 
@@ -94,23 +77,17 @@
   }
   &.is-dragging, &.is-resizing {
     transition-property: none;
-    z-index:1;
+    z-index: 1;
   }
   &.is-maximized {
-    // top: 6px !important;
-    // left: 6px !important;
-    // right: 6px !important;
-    // bottom: 6px !important;
-    // transform: none !important;
-    // width: auto !important;
-    // height: auto !important;
     transition: all 100ms ease;
     z-index: 1;
-    box-shadow: 0 0 8px 0 var(--freeter-widgetLayoutItemShadow);
+    box-shadow: 0 8px 32px var(--freeter-widgetLayoutItemShadow);
   }
+
   .resize-handle {
     position: absolute;
-    z-index:0;
+    z-index: 0;
     &.e, &.w, &.ne {
       width: 10px;
     }
@@ -133,16 +110,6 @@
       bottom: -1px;
       right: -1px;
       cursor: se-resize;
-        // &::after {
-        //   content: "";
-        //   position: absolute;
-        //   right: 3px;
-        //   bottom: 3px;
-        //   width: 5px;
-        //   height: 5px;
-        //   border-right: 2px solid rgba(0, 0, 0, 0.4);
-        //   border-bottom: 2px solid rgba(0, 0, 0, 0.4);
-        // }
     }
     &.nw {
       top: -1px;
@@ -182,11 +149,9 @@
     }
     &.n {
       top: -1px;
-      // transform: rotate(225deg);
     }
     &.s {
       bottom: -1px;
-      // transform: rotate(45deg);
     }
   }
 }

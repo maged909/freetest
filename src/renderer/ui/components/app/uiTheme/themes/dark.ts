@@ -1,31 +1,37 @@
 const base = {
-  primary: '#2488DB',
+  primary: '#5B8EF5',
+  secondary: '#9B6EF3',
 
-  inputBackground: '#313131',
-  inputColor: '#CCCCCC',
-  inputBorder: '#3C3C3C',
+  inputBackground: '#1E1E26',
+  inputColor: '#D4D4E8',
+  inputBorder: '#2E2E3C',
 
-  componentBackground: '#181818',
-  componentBorder: '#2B2B2B',
-  componentColor: '#CCCCCC',
+  componentBackground: '#17171E',
+  componentBorder: '#25252F',
+  componentColor: '#D4D4E8',
 
-  dropAreaBackground: '#2488DB40',
+  sidebarBackground: '#0D0D12',
+  contentBackground: '#13131A',
 
-  openBackground: '#1F1F1F',
-  shadow: '#00000070',
+  dropAreaBackground: '#5B8EF528',
+  openBackground: '#1E1E28',
+  shadow: '#00000055',
 }
 
 export const darkTheme = {
   /**
    * Common
    */
-  background: base.componentBackground,
+  background: base.sidebarBackground,
   outline: base.primary,
   componentBackground: base.componentBackground,
   componentBorder: base.componentBorder,
   componentColor: base.componentColor,
   dropAreaBackground: base.dropAreaBackground,
-  primary: `${base.primary}`,
+  primary: base.primary,
+
+  sidebarBackground: base.sidebarBackground,
+  contentBackground: base.contentBackground,
 
   primary90: `${base.primary}90`,
   primary80: `${base.primary}80`,
@@ -36,6 +42,17 @@ export const darkTheme = {
   primary30: `${base.primary}30`,
   primary20: `${base.primary}20`,
   primary10: `${base.primary}10`,
+
+  secondary: base.secondary,
+  secondary90: `${base.secondary}90`,
+  secondary80: `${base.secondary}80`,
+  secondary70: `${base.secondary}70`,
+  secondary60: `${base.secondary}60`,
+  secondary50: `${base.secondary}50`,
+  secondary40: `${base.secondary}40`,
+  secondary30: `${base.secondary}30`,
+  secondary20: `${base.secondary}20`,
+  secondary10: `${base.secondary}10`,
 
   componentColor90: `${base.componentColor}90`,
   componentColor80: `${base.componentColor}80`,
@@ -50,9 +67,9 @@ export const darkTheme = {
   /**
    * Scroll Bar
    */
-  scrollbarThumb: 'rgba(100, 100, 100, 0.4)',
-  scrollbarThumbHover: 'rgba(100, 100, 100, 0.7)',
-  scrollbarThumbActive: 'rgba(255, 255, 255, 0.6)',
+  scrollbarThumb: 'rgba(255, 255, 255, 0.1)',
+  scrollbarThumbHover: 'rgba(255, 255, 255, 0.18)',
+  scrollbarThumbActive: 'rgba(255, 255, 255, 0.3)',
 
   /**
    * Inputs
@@ -73,25 +90,25 @@ export const darkTheme = {
    * Buttons
    */
   buttonBackground: 'transparent',
-  buttonColor: '#CCCCCC',
-  buttonHoverBackground: '#5A5D5E50',
-  buttonActiveBackground: '#5A5D5E50',
-  buttonPressedBackground: `${base.primary}40`,
-  buttonPressedBorder: base.primary,
-  buttonPressedColor: '#FFFFFF',
+  buttonColor: '#9090A8',
+  buttonHoverBackground: '#FFFFFF0D',
+  buttonActiveBackground: '#FFFFFF0D',
+  buttonPressedBackground: `${base.primary}22`,
+  buttonPressedBorder: `${base.primary}60`,
+  buttonPressedColor: base.primary,
 
-  buttonPrimaryBackground: '#0078D4',
+  buttonPrimaryBackground: base.primary,
   buttonPrimaryColor: '#FFFFFF',
-  buttonPrimaryHoverBackground: '#026EC1',
-  buttonPrimaryActiveBackground: '#026EC1',
+  buttonPrimaryHoverBackground: '#4A7DE8',
+  buttonPrimaryActiveBackground: '#4A7DE8',
 
   /**
    * In-App Notes
    */
-  inAppNoteColor: '#CCCCCC60',
-  inAppNoteIconColor: '#CCCCCC',
-  inAppNoteNoProjectsBackground: '#181818',
-  inAppNoteNoWorkflowsBackground: '#181818',
+  inAppNoteColor: '#9090A850',
+  inAppNoteIconColor: '#9090A8',
+  inAppNoteNoProjectsBackground: base.contentBackground,
+  inAppNoteNoWorkflowsBackground: base.contentBackground,
 
   /**
    * Top Bar
@@ -103,32 +120,32 @@ export const darkTheme = {
    * Top Bar - Widget Palette
    */
   paletteBackground: base.componentBackground,
-  paletteBorder: `${base.primary}25`,
+  paletteBorder: `${base.primary}20`,
   paletteShadow: base.shadow,
-  paletteNoteColor: base.componentColor,
-  paletteTabBackground: `${base.primary}25`,
+  paletteNoteColor: '#9090A8',
+  paletteTabBackground: `${base.primary}18`,
   paletteTabColor: base.componentColor,
   paletteTabHoverBackground: base.openBackground,
   paletteTabHoverColor: '#FFFFFF',
   paletteSectionBackground: base.openBackground,
   paletteItemBackground: 'transparent',
   paletteItemColor: base.componentColor,
-  paletteItemHoverBackground: '#37373D',
-  paletteItemHoverColor: base.componentColor,
+  paletteItemHoverBackground: '#FFFFFF0D',
+  paletteItemHoverColor: '#FFFFFF',
 
   /**
    * Top Bar - Shelf
    */
   shelfDropAreaBackground: base.dropAreaBackground,
 
-  shelfTabColor: base.componentColor,
+  shelfTabColor: '#9090A8',
   shelfTabOpenBackground: base.openBackground,
   shelfTabOpenColor: '#FFFFFF',
 
   shelfWidgetBoxBackground: base.openBackground,
   shelfWidgetBoxBorder: base.componentBorder,
   shelfWidgetBoxShadow: base.shadow,
-  shelfWidgetBoxWidgetBorder: '#323232',
+  shelfWidgetBoxWidgetBorder: '#2E2E3C',
 
   /**
    * Workflow Switcher
@@ -137,68 +154,68 @@ export const darkTheme = {
   workflowSwitcherBorder: base.componentBorder,
   workflowSwitcherDropAreaBackground: base.dropAreaBackground,
 
-  workflowSwitcherTabBackground: base.componentBackground,
-  workflowSwitcherTabColor: base.componentColor,
-  workflowSwitcherTabHoverBackground: base.openBackground,
-  workflowSwitcherTabHoverColor: base.componentColor,
-  workflowSwitcherTabOpenBackground: base.openBackground,
-  workflowSwitcherTabOpenColor: '#FFFFFF',
+  workflowSwitcherTabBackground: 'transparent',
+  workflowSwitcherTabColor: '#9090A8',
+  workflowSwitcherTabHoverBackground: '#FFFFFF0D',
+  workflowSwitcherTabHoverColor: '#D4D4E8',
+  workflowSwitcherTabOpenBackground: `${base.primary}18`,
+  workflowSwitcherTabOpenColor: base.primary,
 
   /**
    * Worktable
    */
-  worktableBackground: base.openBackground,
+  worktableBackground: base.contentBackground,
 
-  widgetLayoutItemBorder: '#323232',
-  widgetLayoutItemEditHoverBorder: '#565656',
-  widgetLayoutItemResizingBorder: '#FFFFFF',
-  widgetLayoutItemResizingOpacity: '0.5',
+  widgetLayoutItemBorder: '#22222C',
+  widgetLayoutItemEditHoverBorder: '#3C3C50',
+  widgetLayoutItemResizingBorder: base.primary,
+  widgetLayoutItemResizingOpacity: '0.6',
   widgetLayoutGhostBackground: base.dropAreaBackground,
   widgetLayoutItemShadow: base.shadow,
 
   /**
    * Modal Screens
    */
-  modalScreenBackground: '#1F1F1F',
+  modalScreenBackground: '#1A1A22',
   modalScreenBorder: base.componentBorder,
   modalScreenColor: base.componentColor,
 
-  settingsScreenPanelColor: '#CCCCCC',
+  settingsScreenPanelColor: '#D4D4E8',
 
   appManagerListBackground: base.componentBackground,
   appManagerListItemBackground: base.componentBackground,
   appManagerListItemColor: base.componentColor,
-  appManagerListItemHoverBackground: '#2A2D2E',
-  appManagerListItemHoverColor: base.componentColor,
-  appManagerListItemSelectedBackground: '#37373D',
+  appManagerListItemHoverBackground: '#FFFFFF09',
+  appManagerListItemHoverColor: '#FFFFFF',
+  appManagerListItemSelectedBackground: '#FFFFFF12',
   appManagerListItemSelectedColor: '#FFFFFF',
   appManagerListItemDropAreaBackground: base.dropAreaBackground,
 
   projectManagerListBackground: base.componentBackground,
   projectManagerListItemBackground: base.componentBackground,
   projectManagerListItemColor: base.componentColor,
-  projectManagerListItemHoverBackground: '#2A2D2E',
-  projectManagerListItemHoverColor: base.componentColor,
-  projectManagerListItemSelectedBackground: '#37373D',
+  projectManagerListItemHoverBackground: '#FFFFFF09',
+  projectManagerListItemHoverColor: '#FFFFFF',
+  projectManagerListItemSelectedBackground: '#FFFFFF12',
   projectManagerListItemSelectedColor: '#FFFFFF',
   projectManagerListItemDropAreaBackground: base.dropAreaBackground,
 
   aboutScreenBorder: base.componentBorder,
   aboutScreenLeftBackground: base.componentBackground,
   aboutScreenLeftColor: base.componentColor,
-  aboutScreenRightBackground: '#1F1F1F',
+  aboutScreenRightBackground: '#1A1A22',
   aboutScreenRightColor: base.componentColor,
   aboutScreenRightLinkColor: base.primary,
-  aboutScreenLogoColor1: '#3B3B3B',
+  aboutScreenLogoColor1: '#2A2A36',
   aboutScreenLogoColor2: '#FFFFFF',
-  aboutScreenLogoBorderColor: '#181818',
+  aboutScreenLogoBorderColor: '#0D0D12',
 
   /**
    * Widget
    */
-  widgetBackground: '#262626',
+  widgetBackground: '#18181F',
   widgetColor: base.componentColor,
-  widgetHeaderBackground: '#262626',
-  widgetHeaderBorder: '#323232',
-  widgetHeaderColor: base.componentColor,
+  widgetHeaderBackground: '#18181F',
+  widgetHeaderBorder: '#22222C',
+  widgetHeaderColor: '#9090A8',
 }

@@ -13,6 +13,8 @@ import arrDown14Svg from './arr-down-14.svg';
 import browse14Svg from './browse-14.svg';
 import delete14Svg from './delete-14.svg';
 import duplicate14Svg from './duplicate-14.svg';
+import export14Svg from './export-14.svg';
+import import14Svg from './import-14.svg';
 import manage14Svg from './manage-14.svg';
 import maximize14Svg from './maximize-14.svg';
 import more14Svg from './more-14.svg';
@@ -32,6 +34,8 @@ export {
   browse14Svg,
   delete14Svg,
   duplicate14Svg,
+  export14Svg,
+  import14Svg,
   manage14Svg,
   maximize14Svg,
   more14Svg,

@@ -111,6 +111,10 @@ import { createOpenSponsorshipUrlUseCase } from '@/application/useCases/about/op
 import { createTerminalProvider } from '@/infra/terminalProvider/terminalProvider';
 import { createShowContextMenuUseCase } from '@/application/useCases/contextMenu/showContextMenu';
 import { createDuplicateProjectInProjectManagerUseCase } from '@/application/useCases/projectManager/duplicateProjectInProjectManager';
+import { createExportProjectFromProjectManagerUseCase } from '@/application/useCases/projectManager/exportProjectFromProjectManager';
+import { createImportProjectIntoProjectManagerUseCase } from '@/application/useCases/projectManager/importProjectIntoProjectManager';
+import { createWriteProjectFileUseCase } from '@/application/useCases/projectManager/writeProjectFile';
+import { createReadProjectFileUseCase } from '@/application/useCases/projectManager/readProjectFile';
 import { createCloneWidgetSubCase } from '@/application/useCases/widget/subs/cloneWidget';
 import { createCloneWorkflowSubCase } from '@/application/useCases/workflow/subs/cloneWorkflow';
 import { createCloneWidgetLayoutItemSubCase } from '@/application/useCases/workflow/subs/cloneWidgetLayoutItem';
@@ -283,6 +287,22 @@ async function createUseCases(store: ReturnType<typeof createStore>) {
     ...deps,
     cloneWidgetLayoutItemSubCase,
   })
+
+  const writeProjectFileUseCase = createWriteProjectFileUseCase();
+  const readProjectFileUseCase = createReadProjectFileUseCase();
+
+  const exportProjectFromProjectManagerUseCase = createExportProjectFromProjectManagerUseCase({
+    appStore: deps.appStore,
+    dialogProvider: osDialogProvider,
+    writeProjectFileUseCase,
+  });
+
+  const importProjectIntoProjectManagerUseCase = createImportProjectIntoProjectManagerUseCase({
+    appStore: deps.appStore,
+    idGenerator: deps.idGenerator,
+    dialogProvider: osDialogProvider,
+    readProjectFileUseCase,
+  });
 
   const addProjectInProjectManagerUseCase = createAddProjectInProjectManagerUseCase(deps);
   const saveChangesInProjectManagerUseCase = createSaveChangesInProjectManagerUseCase({
@@ -483,6 +503,8 @@ async function createUseCases(store: ReturnType<typeof createStore>) {
     switchProjectInProjectManagerUseCase,
     toggleDeletionInProjectManagerUseCase,
     duplicateProjectInProjectManagerUseCase,
+    exportProjectFromProjectManagerUseCase,
+    importProjectIntoProjectManagerUseCase,
     updateProjectSettingsInProjectManagerUseCase,
     updateProjectsOrderInProjectManagerUseCase,
     closeProjectManagerUseCase,

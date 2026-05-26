@@ -127,3 +127,11 @@ export type IpcShowBrowserWindowRes = void;
 export const ipcExecCmdLinesInTerminalChannel = makeIpcChannelName('exec-cmd-lines-in-terminal');
 export type IpcExecCmdLinesInTerminalArgs = [cmdLines: ReadonlyArray<string>, cwd?: string];
 export type IpcExecCmdLinesInTerminalRes = void;
+
+export const ipcReadProjectFileChannel = makeIpcChannelName('read-project-file');
+export type IpcReadProjectFileArgs = [filePath: string];
+export type IpcReadProjectFileRes = string | undefined;
+
+export const ipcWriteProjectFileChannel = makeIpcChannelName('write-project-file');
+export type IpcWriteProjectFileArgs = [filePath: string, content: string];
+export type IpcWriteProjectFileRes = void;

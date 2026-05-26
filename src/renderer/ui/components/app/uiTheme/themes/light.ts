@@ -1,5 +1,6 @@
 const base = {
   primary: '#005FB8',
+  secondary: '#7C4DCC',
 
   inputBackground: '#FFFFFF',
   inputColor: '#3B3B3B',
@@ -27,6 +28,9 @@ export const lightTheme = {
   dropAreaBackground: base.dropAreaBackground,
   primary: `${base.primary}`,
 
+  sidebarBackground: '#F2F2F4',
+  contentBackground: base.openBackground,
+
   primary90: `${base.primary}90`,
   primary80: `${base.primary}80`,
   primary70: `${base.primary}70`,
@@ -36,6 +40,17 @@ export const lightTheme = {
   primary30: `${base.primary}30`,
   primary20: `${base.primary}20`,
   primary10: `${base.primary}10`,
+
+  secondary: base.secondary,
+  secondary90: `${base.secondary}90`,
+  secondary80: `${base.secondary}80`,
+  secondary70: `${base.secondary}70`,
+  secondary60: `${base.secondary}60`,
+  secondary50: `${base.secondary}50`,
+  secondary40: `${base.secondary}40`,
+  secondary30: `${base.secondary}30`,
+  secondary20: `${base.secondary}20`,
+  secondary10: `${base.secondary}10`,
 
   componentColor90: `${base.componentColor}90`,
   componentColor80: `${base.componentColor}80`,

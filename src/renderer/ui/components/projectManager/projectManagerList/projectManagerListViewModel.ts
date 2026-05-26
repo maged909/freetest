@@ -16,6 +16,7 @@ export interface ProjectManagerListProps {
   deleteProjectIds: Record<EntityId, boolean>;
   deleteProjectAction: ProjectManagerListItemProjectAction;
   duplicateProjectAction: ProjectManagerListItemProjectAction;
+  exportProjectAction: ProjectManagerListItemProjectAction;
   onListItemClick: ProjectManagerListItemOnMouseEvent;
   onListItemDragStart: ProjectManagerListItemOnDragEvent;
   onListItemDragEnd: ProjectManagerListItemOnDragEvent;
@@ -24,6 +25,7 @@ export interface ProjectManagerListProps {
   onListItemDragOver: ProjectManagerListItemOnDragEvent;
   onListItemDrop: ProjectManagerListItemOnDragEvent;
   onAddProjectClick: (evt: MouseEvent<HTMLElement>) => void;
+  onImportProjectClick: () => void;
 }
 
 export function useProjectManagerListViewModel(props: ProjectManagerListProps) {

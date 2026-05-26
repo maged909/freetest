@@ -18,6 +18,8 @@ import { EntityId } from '@/base/entity';
 import { ProjectManagerListItemProjectAction } from '@/ui/components/projectManager/projectManagerList/projectManagerListItemViewModel';
 import { moveItemInList } from '@/base/list';
 import { DuplicateProjectInProjectManagerUseCase } from '@/application/useCases/projectManager/duplicateProjectInProjectManager';
+import { ExportProjectFromProjectManagerUseCase } from '@/application/useCases/projectManager/exportProjectFromProjectManager';
+import { ImportProjectIntoProjectManagerUseCase } from '@/application/useCases/projectManager/importProjectIntoProjectManager';
 
 type Deps = {
   useAppState: UseAppState;
@@ -26,6 +28,8 @@ type Deps = {
   switchProjectInProjectManagerUseCase: SwitchProjectInProjectManagerUseCase;
   toggleDeletionInProjectManagerUseCase: ToggleDeletionInProjectManagerUseCase;
   duplicateProjectInProjectManagerUseCase: DuplicateProjectInProjectManagerUseCase;
+  exportProjectFromProjectManagerUseCase: ExportProjectFromProjectManagerUseCase;
+  importProjectIntoProjectManagerUseCase: ImportProjectIntoProjectManagerUseCase;
   updateProjectsOrderInProjectManagerUseCase: UpdateProjectsOrderInProjectManagerUseCase;
   updateProjectSettingsInProjectManagerUseCase: UpdateProjectSettingsInProjectManagerUseCase;
   closeProjectManagerUseCase: CloseProjectManagerUseCase;
@@ -38,6 +42,8 @@ export function createProjectManagerViewModelHook({
   switchProjectInProjectManagerUseCase,
   toggleDeletionInProjectManagerUseCase,
   duplicateProjectInProjectManagerUseCase,
+  exportProjectFromProjectManagerUseCase,
+  importProjectIntoProjectManagerUseCase,
   updateProjectSettingsInProjectManagerUseCase,
   updateProjectsOrderInProjectManagerUseCase,
   closeProjectManagerUseCase,
@@ -155,6 +161,9 @@ export function createProjectManagerViewModelHook({
 
     const duplicateProjectAction: ProjectManagerListItemProjectAction = useCallback((projectId) => duplicateProjectInProjectManagerUseCase(projectId), [])
 
+    const exportProjectAction: ProjectManagerListItemProjectAction = useCallback((projectId) => exportProjectFromProjectManagerUseCase(projectId), [])
+
+    const onImportProjectClick = useCallback(() => importProjectIntoProjectManagerUseCase(), [])
 
     return {
       renderProjectManager,
@@ -167,6 +176,8 @@ export function createProjectManagerViewModelHook({
       projectAddedTrigger,
       deleteProjectAction,
       duplicateProjectAction,
+      exportProjectAction,
+      onImportProjectClick,
       updateSettings,
       onOkClick,
       onCancelClick,

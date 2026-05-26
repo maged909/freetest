@@ -64,6 +64,7 @@ import { createShowSaveFileDialogUseCase } from '@/application/useCases/dialog/s
 import { createShowOpenDirDialogUseCase } from '@/application/useCases/dialog/showOpenDirDialog';
 import { createTerminalControllers } from '@/controllers/terminal';
 import { createExecCmdLinesInTerminalUseCase } from '@/application/useCases/terminal/execCmdLinesInTerminal';
+import { createProjectFileStorageControllers } from '@/controllers/projectFileStorage';
 import { createAppsProvider } from '@/infra/appsProvider/appsProvider';
 import { createChildProcessProvider } from '@/infra/childProcessProvider/childProcessProvider';
 import { createOpenPathUseCase } from '@/application/useCases/shell/openPath';
@@ -201,7 +202,8 @@ if (!app.requestSingleInstanceLock()) {
       ...createGlobalShortcutControllers({ setMainShortcutUseCase }),
       ...createTrayMenuControllers({ setTrayMenuUseCase }),
       ...createBrowserWindowControllers({ showBrowserWindowUseCase }),
-      ...createTerminalControllers({ execCmdLinesInTerminalUseCase })
+      ...createTerminalControllers({ execCmdLinesInTerminalUseCase }),
+      ...createProjectFileStorageControllers(),
     ])
 
     const [windowStore] = createWindowStore({

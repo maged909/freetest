@@ -10,41 +10,51 @@
   right: 0;
   bottom: 0;
   background-color: var(--freeter-widgetBackground);
-  color: var(--freeter-widgetColor)
+  color: var(--freeter-widgetColor);
+  border-radius: 8px;
+  overflow: hidden;
 }
+
 .widget-header {
   position: absolute;
   left: 0;
   top: 0;
   right: 0;
-  height: 26px;
+  height: 30px;
   box-sizing: content-box;
   background-color: var(--freeter-widgetHeaderBackground);
   color: var(--freeter-widgetHeaderColor);
   border-bottom: 1px solid var(--freeter-widgetHeaderBorder);
   overflow: hidden;
+  border-radius: 8px 8px 0 0;
 }
+
 .widget-header-name {
-  font-size: 12px;
-  line-height: 26px;
-  padding: 0 6px;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 30px;
+  padding: 0 8px;
   position: absolute;
-  top:0;
-  left:0;
-  right:0;
+  top: 0;
+  left: 0;
+  right: 0;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
+
 .widget-header-action-bar {
   visibility: hidden;
-  z-index:1; // to overlap WidgetLayoutItem's resize handles
+  z-index: 1;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   background-color: var(--freeter-widgetHeaderBackground);
   border-left: 1px solid var(--freeter-widgetHeaderBorder);
+  border-radius: 0 8px 0 0;
 }
 
 .widget:not(.dont-show-action-bar) {
@@ -58,7 +68,7 @@
 .widget-body {
   position: absolute;
   left: 0;
-  top: 27px;
+  top: 31px;
   right: 0;
   bottom: 0;
   overflow: hidden;

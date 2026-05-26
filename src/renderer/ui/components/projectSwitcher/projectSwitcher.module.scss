@@ -4,12 +4,46 @@
  */
 
 .project-switcher {
-  line-height: 24px;
-  font-family: 'Roboto Condensed';
-  font-size: 16px;
-  min-width: 140px;
-  max-width: 280px;
-  option[disabled] {
-    display: none;
+  appearance: none;
+  -webkit-appearance: none;
+  height: 28px;
+  padding: 0 28px 0 10px;
+  border-radius: 6px;
+  border: 1px solid var(--freeter-secondary30);
+  background-color: var(--freeter-secondary10);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%239B6EF3' fill-opacity='0.7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 9px center;
+  color: var(--freeter-secondary);
+  font-size: 12px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 100ms ease, background-color 100ms ease;
+  max-width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &:hover {
+    border-color: var(--freeter-secondary50);
+    background-color: var(--freeter-secondary20);
+  }
+
+  &:focus-visible {
+    border-color: var(--freeter-secondary60);
+    background-color: var(--freeter-secondary20);
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+
+  option {
+    background-color: var(--freeter-componentBackground);
+    color: var(--freeter-componentColor);
+    font-weight: 400;
   }
 }

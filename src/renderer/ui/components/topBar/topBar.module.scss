@@ -7,15 +7,16 @@
   display: flex;
   z-index: 3;
   background-color: var(--freeter-topBarBackground);
-  border-top: 1px solid var(--freeter-topBarBorder);
   border-bottom: 1px solid var(--freeter-topBarBorder);
+  flex-shrink: 0;
 }
 
 .top-bar-section {
   box-sizing: border-box;
-  padding: 12px;
-  height: 60px;
+  padding: 10px 12px;
+  height: 48px;
   display: flex;
+  align-items: center;
   &:not(:last-child) {
     border-right: 1px solid var(--freeter-topBarBorder);
   }
@@ -36,6 +37,6 @@
 }
 
 .project-switcher {
-  height: 36px;
-  margin-right: 12px;
+  height: 30px;
+  margin-right: 8px;
 }

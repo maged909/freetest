@@ -35,9 +35,7 @@ export function createAppComponent({
           <WorkflowSwitcher />
           {
             hasProjects
-            ? <>
-                <Worktable />
-              </>
+            ? <Worktable />
             : <InAppNote className={styles['no-projects']}>
                 {'You don\'t have any projects. Use the Manage Projects '} <SvgIcon svg={manage24Svg} className={styles['manage-icon']} /> {' button above (or under the View menu) to create a first one.'}
               </InAppNote>
