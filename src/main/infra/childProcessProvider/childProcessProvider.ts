@@ -13,7 +13,6 @@ export function createChildProcessProvider(): ChildProcessProvider {
         ...opts,
         detached: true,
         stdio: 'ignore',
-        windowsHide: true
       });
       proc.unref();
     }

@@ -40,7 +40,7 @@ export function createExecCmdLinesInTerminalUseCase({ appsProvider, childProcess
         const [cmd, ...args] = argsFactory(cmdLine);
         spawnDetached(cmd, args, {
           cwd,
-          shell: true
+          shell: false
         })
       }
       break;
