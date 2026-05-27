@@ -14,6 +14,9 @@ export function createChildProcessProvider(): ChildProcessProvider {
         detached: true,
         stdio: 'ignore',
       });
+      proc.on('error', (err) => {
+        console.error('[spawnDetached] spawn error:', err.message, '| cmd:', cmd, '| args:', JSON.stringify(args));
+      });
       proc.unref();
     }
   }

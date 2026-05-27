@@ -24,12 +24,18 @@ export function createArgsFactoryToExecCmdLineInLinuxTerminal(terminal: string) 
 }
 
 export function createArgsFactoryToExecCmdLineInWinTerminal(terminal: string) {
-  let factory: (cmdLine: string) => string[];
+  let factory: (cmdLine: string, cwd?: string) => string[];
 
   switch (terminal.toLowerCase()) {
     default: {
-      // Use full path from ComSpec; `start ""` opens a new console window for the inner cmd
-      factory = cmdLine => [terminal, '/c', 'start', '', terminal, '/k', cmdLine];
+      // Use full path from ComSpec; `start /D <cwd>` opens a new console in the right directory
+      // without passing cwd as a spawn option (which fails with ENOENT if the dir doesn't exist)
+      factory = (cmdLine, cwd) => {
+        const args = [terminal, '/c', 'start', ''];
+        if (cwd) { args.push('/D', cwd); }
+        args.push(terminal, '/k', cmdLine);
+        return args;
+      };
     }
   }
 

@@ -37,9 +37,8 @@ export function createExecCmdLinesInTerminalUseCase({ appsProvider, childProcess
     case 'win32': {
       const argsFactory = createArgsFactoryToExecCmdLineInWinTerminal(term);
       exec = (cmdLine, cwd) => {
-        const [cmd, ...args] = argsFactory(cmdLine);
+        const [cmd, ...args] = argsFactory(cmdLine, cwd);
         spawnDetached(cmd, args, {
-          cwd,
           shell: false
         })
       }
