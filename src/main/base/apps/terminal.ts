@@ -28,7 +28,8 @@ export function createArgsFactoryToExecCmdLineInWinTerminal(terminal: string) {
 
   switch (terminal.toLowerCase()) {
     default: {
-      factory = cmdLine => ['cmd.exe', '/s', '/k', `"${cmdLine}"`];
+      // Use full path from ComSpec; `start ""` opens a new console window for the inner cmd
+      factory = cmdLine => [terminal, '/c', 'start', '', terminal, '/k', cmdLine];
     }
   }
 
